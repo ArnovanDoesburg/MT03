@@ -1,0 +1,67 @@
+<navigation></navigation>
+
+<aside>
+    <div class="province-list">
+        <div class="province {{province.name.toLowerCase()}}" ng-repeat="province in calendarctrl.provinces">
+            <h3>{{province.name}}
+                <button ng-click="province.toggle()">
+                    <span ng-show="province.collapsed">-</span>
+                    <span ng-hide="province.collapsed">+</span>
+                </button>
+            </h3>
+
+            <div ng-show="province.collapsed">
+                <div class="select-audience" ng-show="province.events.length > 0">
+                    <select ng-model="province.selectedAudience">
+                        <option value="all" selected="selected">Selecteer een doelgroep</option>
+                        <option value="all">Alle doelgroepen</option>
+                        <option value="{{audience.toLowerCase()}}" ng-repeat="audience in province.getAudienceList()">
+                            {{audience}}
+                        </option>
+                    </select>
+                </div>
+                <div class="events" ng-show="province.events.length > 0">
+                    <div class="event" ng-repeat="event in province.getFilteredEvents()">
+                        <h4>{{event.title}}</h4>
+                        <p>{{event.lead}}</p>
+
+                        <table>
+                            <tr ng-show="event.humanPubdate">
+                                <th>Wanneer</th>
+                                <td>{{event.humanPubdate}}</td>
+                            </tr>
+                            <tr ng-show="event.location.street && event.location.city ">
+                                <th>Waar</th>
+                                <td>{{event.location.street}}, {{event.location.city}}</td>
+                            </tr>
+                            <tr ng-show="event.activityWebsite">
+                                <th>Website</th>
+                                <td>
+                                    <a target="_blank" href="{{event.activityWebsite}}">
+                                        <span ng-show="event.subtitle">{{event.subtitle}}</span>
+                                        <span ng-hide="event.subtitle">Bron</span>
+                                    </a>
+                                </td>
+                            </tr>
+                        </table>
+
+                    </div>
+                </div>
+                <div ng-show="province.events.length === 0">
+                    <p>Er zijn geen evenementen voor deze provincie.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</aside>
+
+<section class="map-interface">
+    <div class="map-placeholder">
+        <div ng-repeat="province in calendarctrl.provinces" class="province {{province.name.toLowerCase()}}"
+             ng-click="province.toggle()">
+            <div class="event-counter" ng-class="province.collapsed  ? 'active' : ''">
+                <span>{{province.events.length}}</span>
+            </div>
+        </div>
+    </div>
+</section>

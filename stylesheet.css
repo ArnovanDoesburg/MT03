@@ -1,0 +1,282 @@
+body {
+    width: 100%;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 300;
+    margin: 0;
+    padding: 0;
+}
+
+navigation {
+    display: flex;
+    display: -webkit-flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: #000;
+    z-index: 99999;
+}
+
+navigation nav {
+    display: flex;
+    display: -webkit-flex;
+    margin-right: auto;
+}
+
+navigation nav ul {
+    padding: 0;
+    margin: 0 0 0 20px;
+}
+
+navigation nav ul li {
+    display: inline-block;
+    color: #FFF;
+    padding: 10px;
+}
+
+navigation nav ul li a {
+    padding: 11px;
+    display: inline-block;
+}
+
+navigation nav ul li a:hover {
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+}
+
+navigation nav ul li a.current {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+}
+
+navigation nav ul li a.current:hover {
+    background: rgba(255, 255, 255, 0.4);
+}
+
+navigation h1 {
+    display: flex;
+    display: -webkit-flex;
+    color: #FFF;
+    font-weight: 300;
+    font-size: 20px;
+    margin: 19px 15px 0 auto;
+
+}
+
+.home {
+    margin: 0 auto;
+    text-align: center;
+}
+
+.home p:nth-child(3) {
+    font-size: 16px;
+}
+
+.home p {
+    font-size: 20px;
+}
+
+aside {
+    width: 33%;
+    overflow-y: scroll;
+    position: absolute;
+    top: 64px;
+    bottom: 0;
+}
+
+.province-list {
+    display: inline-grid;
+    width: 100%;
+}
+
+.province-list .province {
+    padding: 0 0 0 20px;
+}
+
+.province-list .province .event {
+    background: #FFF;
+    padding: 10px 10px 10px 15px;
+    margin: 10px 20px 10px 0;
+    border-radius: 10px;
+}
+
+.province-list .province .event p, .province-list .province .event h4 {
+    margin: 0;
+}
+
+.province-list .province .event p {
+    font-size: 14px;
+    margin-top: 4px;
+}
+
+.province-list .province .event table {
+    font-size: 12px;
+    margin-top: 7px;
+}
+
+.province-list .province .event table th {
+    text-align: left;
+}
+
+.province-list .province:nth-child(odd) {
+    background: #dad6dd;
+}
+
+.province-list .province:nth-child(even) {
+    background: #bfbbc2;
+}
+
+.province-list .province h3 button {
+    float: right;
+    margin: 5px 20px 0 0;
+}
+
+section.map-interface {
+    position: fixed;
+    right: 0;
+    width: 55%;
+    top: 64px;
+    bottom: 0;
+}
+
+.map-placeholder {
+    width: 600px;
+    height: 710px;
+    background-image: url(img/kaart.png);
+    background-size: cover;
+    position: relative;
+}
+
+.map-placeholder .province {
+    position: absolute;
+    display: flex;
+    display: -webkit-flex;
+}
+
+.map-placeholder .province:hover {
+    cursor: pointer;
+}
+
+.map-placeholder .event-counter {
+    margin: auto;
+    background: purple;
+    color: #FFF;
+    border-radius: 16px;
+    width: 27px;
+    height: 25px;
+    text-align: center;
+    display: inline-block;
+    padding-top: 2px;
+}
+
+.map-placeholder .event-counter.active {
+    border: 2px solid #FFF;
+}
+
+.map-placeholder .province.groningen {
+    right: 12px;
+    top: 26px;
+    width: 152px;
+    height: 90px;
+}
+
+.map-placeholder .province.friesland {
+    right: 166px;
+    top: 38px;
+    height: 140px;
+    width: 120px;
+}
+
+.map-placeholder .province.drenthe {
+    right: 30px;
+    top: 122px;
+    height: 110px;
+    width: 130px;
+}
+
+.map-placeholder .province.overijssel {
+    top: 240px;
+    right: 30px;
+    height: 100px;
+    width: 160px;
+    z-index: 1;
+}
+
+.map-placeholder .province.flevoland {
+    left: 291px;
+    top: 190px;
+    width: 93px;
+    height: 120px;
+    z-index: 1;
+}
+
+.map-placeholder .province.gelderland {
+    right: 50px;
+    height: 170px;
+    top: 270px;
+    width: 280px;
+}
+
+.map-placeholder .province.utrecht {
+    bottom: 300px;
+    left: 233px;
+    width: 119px;
+    height: 90px;
+}
+
+.map-placeholder .province.utrecht .event-counter {
+    margin: 39px 40px;
+}
+
+.map-placeholder .province.noord-holland {
+    top: 23px;
+    left: 190px;
+    height: 290px;
+    width: 100px;
+}
+
+.map-placeholder .province.noord-holland .event-counter {
+    margin: 210px 30px;
+}
+
+.map-placeholder .province.zuid-holland {
+    bottom: 249px;
+    width: 130px;
+    left: 102px;
+    height: 140px;
+}
+
+.map-placeholder .province.zeeland {
+    bottom: 120px;
+    left: 0;
+    width: 135px;
+    height: 160px;
+}
+
+.map-placeholder .province.noord-brabant {
+    bottom: 123px;
+    left: 140px;
+    width: 223px;
+    height: 121px;
+}
+
+.map-placeholder .province.noord-brabant .event-counter {
+    margin: 25px 0 0 140px;
+}
+
+.map-placeholder .province.limburg {
+    bottom: 0;
+    right: 150px;
+    width: 85px;
+    height: 190px;
+}
+
+.about {
+    margin: 0 auto;
+    text-align: center;
+}
+
+.about p {
+    margin: 0;
+}
