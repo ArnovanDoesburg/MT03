@@ -1,6 +1,8 @@
 # MT03
 Herkansing Hogeschool Rotterdam Serious Javascript
 
+Link: https://stud.hosted.hr.nl/0902237/MT03/#!/agenda
+
 Opdracht:
 
 "Opdracht	FED01	– wetenschappelijke	agenda	voor	jou	in	de	buurt.
